@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  --type-first: "Raleway", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #003cd2;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f1da68;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0px;
+  color: #000;
+  font-family: var(--type-first);
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.marker {
+  background-image: url("/concepts/hotsite/v1/pin.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-attrib.mapboxgl-compact,
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib,
+.mapboxgl-ctrl-attrib-button,
+.mapboxgl-ctrl-icon,
+.mapboxgl-ctrl-attrib.mapboxgl-compact-show,
+a.mapboxgl-ctrl-logo {
+  display: none !important;
+}

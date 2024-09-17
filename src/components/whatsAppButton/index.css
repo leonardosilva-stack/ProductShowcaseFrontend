@@ -1,0 +1,93 @@
+/* index.css */
+
+.button-whats {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  box-shadow: 1px 1px 2px #888;
+  z-index: 1000;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-whats i {
+  margin-top: 16px;
+}
+
+.button-whats::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100px;
+  border: 6px solid #00ffcb;
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  width: calc(60px + 12px);
+  height: calc(60px + 12px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-whats:hover,
+.button-whats:focus {
+  color: white;
+  transform: translateY(0px);
+}
+
+.button-whats:hover::before,
+.button-whats:focus::before {
+  opacity: 1;
+}
+
+.button-whats::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00ffcb;
+  animation: ring 1.5s infinite;
+  z-index: -1;
+}
+
+.button-whats:hover::after,
+.button-whats:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-whats {
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
