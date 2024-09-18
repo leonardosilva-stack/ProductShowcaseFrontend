@@ -81,8 +81,8 @@ a {
   background-image: url("/concepts/hotsite/v1/pin.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
 

@@ -24,7 +24,7 @@ const About = () => {
   }
 
   return (
-    <section className="container my-10 px-4 lg:px-0">
+    <section id="about" className="container my-10 px-4 lg:px-0">
       <div className="flex flex-col lg:flex-row justify-between">
         <div className="max-w-[600px] order-2 lg:order-1">
           <h1 className="text-3xl text-[#FFB400] font-bold">Sobre</h1>

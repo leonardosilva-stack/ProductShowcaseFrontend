@@ -6,12 +6,13 @@ const Map = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const mapboxRef = useRef(null);
 
-  const novaLatitude = -23.4952108;
-  const novaLongitude = -47.4620969;
+  // Latitude e longitude corretas da Tata Consultancy Services
+  const novaLatitude = -23.5658791;
+  const novaLongitude = -46.652091;
 
-  let markers = [
+  const markers = [
     {
-      coordinates: [-47.4620969, -23.4952108],
+      coordinates: [novaLongitude, novaLatitude],
       title: "Tata Consultancy Services",
     },
   ];
@@ -33,17 +34,13 @@ const Map = () => {
 
   useEffect(() => {
     if (!mapboxRef.current) {
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoibGVvbmFyZG8tc3VtbWVyIiwiYSI6ImNsbzM1OHFwZzBkODgybnA5YTMxbHpudGgifQ.A-8na_KKERKhvCVemm_mug";
+      mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
       const map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/leonardo-summer/cluiqvezh002801pbhypi1jnj",
-        zoom: screenWidth < 1024 ? 16 : 16,
-        center: [
-          screenWidth < 1024 ? -47.4620969 : novaLongitude,
-          screenWidth < 1024 ? -23.4952108 : novaLatitude,
-        ],
+        zoom: screenWidth < 1024 ? 18 : 18,
+        center: [novaLongitude, novaLatitude],
       });
 
       map.on("move", () => {
@@ -72,15 +69,15 @@ const Map = () => {
           .setLngLat(marker.coordinates)
           .addTo(map)
           .getElement()
-          .addEventListener("click", () => setEndereco(enderecoAtual));
+          .addEventListener("click", () => console.log(enderecoAtual));
       });
 
       mapboxRef.current = map;
     }
-  }, [novaLatitude, novaLongitude, markers, screenWidth]);
+  }, [markers, screenWidth]);
 
   return (
-    <section className="relative">
+    <section id="address" className="relative">
       <div className="flex relative">
         <div
           id="map"

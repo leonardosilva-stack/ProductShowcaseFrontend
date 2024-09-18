@@ -56,7 +56,7 @@ const ProductSection = () => {
   };
 
   return (
-    <section className="container mx-auto py-10 px-4 lg:px-0">
+    <section id="products" className="container mx-auto py-10 px-4 lg:px-0">
       <div className="flex gap-y-3 lg:gap-y-0 lg:flex-row flex-col gap-x-5 justify-center mb-4">
         <button
           onClick={() => handleBrandClick(null)}
